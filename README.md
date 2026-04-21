@@ -1,16 +1,37 @@
 # Order Book Analysis + HFT Microstructure
 
-HFT order book reconstruction, microstructure feature analysis and short-horizon price prediction.
+## Live Demo
+Coming soon on Streamlit Cloud
 
 ## Architecture
-LOBSTER Raw Data -> Order Book Reconstruction -> Microstructure Features -> Price Prediction Model -> Analysis
+LOBSTER Simulator -> Order Book Reconstruction -> Microstructure Features -> Price Prediction
+
+## Features
+- Order Book Reconstruction: Full limit order book tick by tick
+- Bid-Ask Spread Analysis: Quoted spread, effective spread, intraday patterns
+- Order Flow Imbalance: Buy vs sell pressure measurement
+- VPIN: Order flow toxicity measurement
+- Price Prediction: GradientBoosting on microstructure features
 
 ## Tech Stack
-- Data: LOBSTER Dataset (Level 2 order book)
-- Processing: Python, Pandas, Polars, NumPy
-- Features: Bid-Ask Spread, OFI, VPIN, Market Impact
-- ML: Scikit-learn, XGBoost
-- Visualization: Plotly, Matplotlib
+- Data: LOBSTER-style simulation
+- Processing: Python, Pandas, NumPy
+- ML: Scikit-learn GradientBoosting
+- Dashboard: Streamlit + Plotly
+
+## How to Run Locally
+git clone https://github.com/saimanjunathk/order-book-analysis
+cd order-book-analysis
+python -m venv venv
+venv\Scripts\activate
+pip install -r requirements.txt
+streamlit run dashboard/app.py
 
 ## Status
-In Progress
+- LOBSTER Simulator - Done
+- Order Book Reconstruction - Done
+- Spread Analysis - Done
+- Order Flow Imbalance - Done
+- VPIN Calculator - Done
+- Price Predictor - Done
+- Live Dashboard - Done
